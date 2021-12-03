@@ -1,3 +1,4 @@
+
 '''
 Пузырьковая сортировка
 Этот самый простой алгоритм сортировки который выполняет итерации(повторение в цикле) по списку, сравнивая элементы попарно и меняя их местами,
@@ -17,6 +18,9 @@
 мы устанавливаем флаг в True, чтобы повторить процесс сортировки. Если перестановок не произошло, флаг останется False, и алгоритм остановится.
 '''
 
+import time
+import random
+
 
 def bubble_sort(nums):
     swap = True
@@ -26,7 +30,9 @@ def bubble_sort(nums):
             if nums[i] > nums[i + 1]:
                 nums[i],nums[i + 1] = nums[i + 1],nums[i]
                 swap = True
-nums = [2,6,1,9,9,10,-5,-4]
-
+nums = random.sample(range(10001),10001)
+v = time.time()
 bubble_sort(nums)
 print(nums)
+b = time.time()
+print(b - v)
